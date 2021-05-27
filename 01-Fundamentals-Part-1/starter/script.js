@@ -7,3 +7,4 @@ let value = "hello";
 console.log(2 + 4 - 8 * 2);
 */
 console.log(2 + 4 + 7);
+console.log(2 + 3 + 3);

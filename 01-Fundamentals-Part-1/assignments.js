@@ -4,3 +4,4 @@ console.log("Hello There");
 
 var value = 23;
 console.log(typeof value);
+console.log(2 + 2);
