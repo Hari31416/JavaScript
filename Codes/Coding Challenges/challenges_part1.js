@@ -11,7 +11,6 @@ bmiJohn = weightJohn / heightJohn ** 2;
 markHigherBMI = bmiMarks > bmiJohn;
 
 console.log(markHigherBMI);
-*/
 let weightMarks = 95;
 let weightJohn = 85;
 let heightMarks = 1.88;
@@ -23,3 +22,4 @@ bmiJohn = weightJohn / heightJohn ** 2;
 markHigherBMI = bmiMarks > bmiJohn;
 
 console.log(markHigherBMI);
+*/
