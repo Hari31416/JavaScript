@@ -1,5 +1,4 @@
 var t0 = performance.now();
-/*
 function isPrime(n) {
   if (n === 1 || n % 2 === 0) {
     if (n === 2) {
@@ -17,7 +16,13 @@ function isPrime(n) {
   }
   return true;
 }
-console.log(isPrime(4256233));
-*/
+// console.log(isPrime(5754853343));
+let array = [];
+for (let j = 1; j < 1000000; j += 2) {
+  if (isPrime(j)) {
+    array.push(j);
+  }
+}
+console.log(array[array.length - 1]);
 var t1 = performance.now();
 console.log("It took " + (t1 - t0) * 100 + " milliseconds.");
