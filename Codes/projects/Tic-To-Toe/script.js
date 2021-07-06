@@ -6,16 +6,18 @@ winner = document.querySelector(".winner");
 markerOne = document.querySelector(".marker1");
 markerZero = document.querySelector(".marker0");
 
-var playerMarker = ["🔴", "❌"];
+var playerMarker;
 const marker1 = "🔴";
 const marker2 = "❌";
 var currentPlayer = 1;
 
 markerZero.addEventListener("click", function () {
   markerZero.classList.toggle("clicked");
+  markerOne.classList.remove("clicked");
 });
 markerOne.addEventListener("click", function () {
   markerOne.classList.toggle("clicked");
+  markerZero.classList.remove("clicked");
 });
 
 function giveWinner(winner) {
@@ -76,12 +78,12 @@ fills.forEach((fill) => {
       }
     }
     if (giveWinner(marker1)) {
-      box.classList.add("hidden");
+      // box.classList.add("hidden");
       winner.textContent = `Player with the marker ${marker1} wins!`;
       document.querySelector("body").style.backgroundColor = "#4bfdaa";
       winner.classList.remove("hidden");
     } else if (giveWinner(marker2)) {
-      box.classList.add("hidden");
+      // box.classList.add("hidden");
       winner.textContent = `Player with the marker ${marker2} wins!`;
       document.querySelector("body").style.backgroundColor = "#4bfdaa";
 
@@ -91,14 +93,14 @@ fills.forEach((fill) => {
     }
   });
 
-  //replay buttons
+  //replay button
   replay.addEventListener("click", function () {
     fill.textContent = "Click Me!";
     fill.classList.remove("player1");
     fill.classList.remove("player0");
     fill.classList.add("empty");
     currentPlayer = 1;
-    // box.classList.remove("hidden");
+    box.classList.remove("hidden");
     winner.textContent = "";
     winner.classList.add("hidden");
     document.querySelector(".markerChoose").classList.remove("hidden");

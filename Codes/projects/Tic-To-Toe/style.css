@@ -7,7 +7,7 @@ body {
     rgb(243, 240, 193),
     rgb(233, 230, 184)
   ); */
-  font-family: Arial;
+  font-family: Georgia;
   /* font-size: 20px; */
   /* padding: 40px; */
 }
@@ -78,6 +78,7 @@ h2 {
   width: 40%;
   background-color: cyan;
   margin-bottom: 30px;
+  font-family: cursive;
 }
 
 .start:hover,
@@ -118,6 +119,7 @@ h2 {
   font-size: 40px;
   background-color: rgb(133, 248, 87);
   cursor: pointer;
+  font-family: cursive;
 }
 .empty {
   background-color: rgb(105, 102, 57);
