@@ -1,0 +1,17 @@
+body {
+  background-color: aquamarine;
+}
+
+header {
+  margin: 0%;
+  padding: 20px;
+  height: 100px;
+  background: rgb(41, 141, 255);
+}
+
+h1,
+h3 {
+  /* line-height: 50px; */
+  /* padding-bottom: 20px; */
+  text-align: center;
+}
