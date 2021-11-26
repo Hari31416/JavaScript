@@ -1,0 +1,27 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(10, 9, 9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+button {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(10, 9, 9);
+  color: orange;
+  border: orange solid 2px;
+  font-size: 1.2em;
+  padding: 0.7em;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  border: #f8f406 solid 2px;
+  color: rgb(255, 255, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 0em 0.2em 0.09em rgb(248, 244, 6);
+  cursor: pointer;
+}
