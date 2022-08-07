@@ -1,0 +1,228 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <span id="switch">
+      <button class="btn btn-sm btn-dark">Turn to Dark Side</button></span>
+    <h1 class="text-center">jQuery</h1>
+    <section>
+      <h2>The Document Ready Event</h2>
+      <p>A good idea is to use jQuery after the whole document is loaded. This can be realized by wrapping all the jQuery lines inside the <b>The Document Ready Event</b> by using the syntax:</p> <code class="code">$(document).ready(function(){
+        // jQuery methods go here...
+        });
+      </code>
+      <p>There is also a shortcut syntax for this:</p>
+      <code class="code">$(function(){
+        // jQuery methods go here...
+        });
+      </code>
+    </section>
+    <section>
+      <h2>jQuery Selectors</h2>
+      <p>jQuery selectors are used to "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors. All selectors in jQuery start with the dollar sign and parentheses: <code class="code">$()</code>.</p>
+      <p>Since the selector supports CSS format, we can use <code class="code">$("tag")</code> to select tag, <code class="code">$(".class")</code> to select class, <code class="code">$("#ID")</code> to select ID and so on. Following table shows some more examples:</p>
+      <table class="table table-bordered light">
+        <thead>
+          <tr>
+            <th>Selector</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code class="code">$("*")</code></td>
+            <td>Selects all elements</td>
+          </tr>
+          <tr>
+            <td><code class="code">$(this)</code></td>
+            <td>Selects current element</td>
+          </tr>
+          <tr>
+            <td><code class="code">$("p.intro")</code></td>
+            <td>Selects all p elements with class="intro"</td>
+          </tr>
+          <tr>
+            <td><code class="code">$("p:first")</code></td>
+            <td>Selects the first p element</td>
+          </tr>
+          <tr>
+            <td><code class="code">$("ul li:first")</code></td>
+            <td>Selects the first li element of the first ul </td>
+          </tr>
+          <tr>
+            <td><code class="code">$("ul li:first-child")</code></td>
+            <td>Selects the first li element of every ul
+            </td>
+          </tr>
+          <tr>
+            <td><code class="code">$("[href]"))</code></td>
+            <td>Selects all elements with an href attribute</td>
+          </tr>
+          <tr>
+            <td><code class="code">$("a[target='_blank']")</code></td>
+            <td>Selects all <a> elements with a target attribute value equal to "_blank"</td>
+          </tr>
+          <tr>
+            <td><code class="code">$("a[target!='_blank']")</code></td>
+            <td>Selects all <a> elements with a target attribute value NOT equal to "_blank"</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>jQuery Event Methods</h2>
+      <p>jQuery is tailor-made to respond to events in an HTML page.</p>
+      <p>In jQuery, most DOM events have an equivalent jQuery method. To assign a click event to all paragraphs on a page, you can do this:</p>
+      <code class="code">$("p").click();</code>
+      <p>The next step is to define what should happen when the event fires. You must pass a function to the event:</p>
+      <code class="code">$("p").click(function(){
+        // action goes here!!
+        });</code>
+      <h3>The on() Method</h3>
+      <p>The <code class="code">on()</code> method attaches one or more event handlers for the selected elements. For example:</p>
+      <code class="code">$("p").on("click", function(){
+        $(this).hide();
+        });</code>
+      <p>We can even attach multiple event handlers to a single element:</p>
+      <code class="code">
+        $("p").on({
+        mouseenter: function(){
+        $(this).css("background-color", "lightgray");
+        },
+        mouseleave: function(){
+        $(this).css("background-color", "lightblue");
+        },
+        click: function(){
+        $(this).css("background-color", "yellow");
+        }
+        });
+      </code>
+      <h4 id="event-handler">Click or hover over me and I'll change color.</h4>
+    </section>
+    <section>
+      <h3>jQuery hide() and show()</h3>
+      <p>We can use <code class="code">hide()</code> and <code class="code">show()</code> methods to hide or show a HTML element.</p>
+      <button id="btn-hide" class="btn btn-primary">Click me and I'll be gone.</button>
+      <p>The <code class="code">hide()</code> and <code class="code">show()</code> methods can also take twp optional parameters</p>
+      <ul>
+        <li>
+          <code class="code">speed</code> - the speed of the animation in milliseconds
+        </li>
+        <li>
+          <code class="code">callback</code> - A callback function to be invoked after the animation completes
+        </li>
+      </ul>
+      <p>Here is an example
+        <code class="code">$("button").click(function(){
+          $("p").hide(1000);
+          });</code>
+      </p>
+      <button id="btn-hide-slow" class="btn btn-primary">Click me and I'll be gone but slowly</button>
+      <h3>jQuery toggle()</h3>
+      <p>We can also toggle between hiding and showing an element with the <code class="code">toggle()</code> method. Shown elements are hidden and hidden elements are shown:
+        <code class="code">$("button").click(function(){
+          $("p").toggle();
+          });
+        </code>
+      </p>
+    </section>
+    <section>
+      <h2>jQuery Fading Methods</h2>
+      <p>With jQuery you can fade an element in and out of visibility. jQuery has the following fade methods:</p>
+      <ul>
+        <li>
+          <code class="code">fadeIn()</code> - fades an element in
+        </li>
+        <li>
+          <code class="code">fadeOut()</code> - fades an element out
+        </li>
+        <li>
+          <code class="code">fadeTo()</code> - fades an element to a certain opacity
+        </li>
+        <li>
+          <code class="code">fadeToggle()</code> - toggles between fadeIn and fadeOut
+        </li>
+      </ul>
+      <p>Just like the hide and show methods, these methods also takes speed as an additional parameter.</p>
+      <button id="btn-fade" class="btn btn-primary">Click me and the division below will fade out</button>
+      <div id="fade-div" class="fade-div">
+        <p>I'm a fading div</p>
+      </div>
+      <h3>jQuery fadeTo() Method</h3>
+      <p>This allows fading to a given opacity (value between 0 and 1). For example:
+        <code class="code">$("button").click(function(){
+          $("#div1").fadeTo("slow", 0.15);
+          $("#div2").fadeTo("slow", 0.4);
+          $("#div3").fadeTo("slow", 0.7);
+          });</code>
+      </p>
+    </section>
+    <section>
+      <h2>jQuery - Get Content and Attributes</h2>
+      <p>Three simple, but useful, jQuery methods for DOM manipulation are:</p>
+      <ul>
+        <li>
+          <code class="code">html()</code> - gets or sets the HTML content of an element
+        </li>
+        <li>
+          <code class="code">text()</code> - gets or sets the text content of an element
+        </li>
+        <li>
+          <code class="code">val()</code> - gets or sets the value of an input element
+        </li>
+      </ul>
+      <p>For example:
+        <br>
+        <code class="code">$("#btn1").click(function(){
+          alert("Text: " + $("#test").text());
+          });
+          $("#btn2").click(function(){
+          alert("HTML: " + $("#test").html());
+          });
+        </code>
+      </p>
+      <button id="btn-get" class="btn btn-primary">Click Me!</button>
+      <p><span id="p-get"> This text will be used in the alert.</span></p>
+      <p>The same above three methods can also be used to set the values.</p>
+      <code class="code">
+        $("#btn1").click(function(){
+        $("#test1").text("Hello world!");
+        });
+        $("#btn2").click(function(){
+        $("#test2").html("<b>Hello world!</b>");
+        });
+        $("#btn3").click(function(){
+        $("#test3").val("Dolly Duck");
+        });
+      </code><br>
+      <button id="btn-set" class="btn btn-primary">Click Me!</button>
+      <p>Click the button and the text of the below paragraph will change.</p>
+      <p><span id="p-set">Please Change Me!</span></p>
+      <h3>Set Attributes - attr()</h3>
+      <p>The jQuery <code class="code">attr()</code> method is also used to set/change attribute values.
+
+        The following example demonstrates how to change (set) the value of the href attribute in a link:</p>
+      <code class="code">
+        $("button").click(function(){
+        $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+        });
+      </code>
+    </section>
+
+  </div>
+</body>
+
+</html>
